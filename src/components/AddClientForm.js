@@ -7,25 +7,25 @@ const AddClientForm = ({ name, email, handleChange, handleSubmit }) => {
     <div>
       <h2>Ajouter un nouveau client</h2>
       <form onSubmit={handleSubmit}>
-        <label>
-          Nom:
-          <input
+        <label>Nom:</label>
+        <br />
+        <input
             type="text"
             name="name"
             value={name}
             onChange={handleChange}
-          />
-        </label>
+        />
+        
         <br />
-        <label>
-          Email:
-          <input
+
+        <label>Email: </label>
+        <br></br>
+        <input
             type="email"
             name="email"
             value={email}
             onChange={handleChange}
           />
-        </label>
         <br />
         <button type="submit">Ajouter</button>
       </form>

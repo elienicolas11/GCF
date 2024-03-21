@@ -32,17 +32,20 @@
     box-shadow: 0px 1px 20px 0px rgb(0 0 0 / 50%);
     height: 80%;
     width: 50%;
+    justify-content: center;
+    align-items: center;
   }
+  
   
   main {
     height: 60%;
   }
   
   h1 {
-    margin-top: 0;
-    padding-bottom: 20px;
-    border-bottom: 5px solid #80808054;
-  }
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #007bff;
+}
   
   a {
     color: rgb(233, 109, 130);
@@ -81,3 +84,48 @@
   label {
     cursor: pointer;
   }
+ 
+
+li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 2px solid #007bff; /* Change the border color as needed */
+  border-radius: 10px;
+}
+
+li:hover {
+  background-color: #f0f0f0; /* Change the background color on hover as needed */
+}
+
+/* Scrollbar styles */
+ul {
+  max-height: 350px; /* Adjust the max-height as needed */
+  overflow-y: auto;
+}
+
+/* Customize scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Change the scrollbar track color as needed */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Change the scrollbar thumb color as needed */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Change the scrollbar thumb color on hover as needed */
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+.hr-custom {
+  border: 1px solid #007bff;
+  margin: 0 0 20px 0;
+}
