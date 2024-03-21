@@ -52,10 +52,8 @@ export const addinvoiceToApi = (invoice) => {
     return fetch(SUPABASE_URL_INV, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json",
             Authorization: "Bearer " + SUPABASE_API_KEY,
             apiKey: SUPABASE_API_KEY,
-            "Prefer": "return=minimal"
         },
         body: JSON.stringify(invoice),
     })

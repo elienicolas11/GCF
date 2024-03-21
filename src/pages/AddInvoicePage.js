@@ -3,16 +3,20 @@
 import React, { useState } from "react";
 import { addinvoiceToApi } from "../api/http";
 import AddInvoiceForm from "../components/AddInvoiceForm";
+import { Link, useParams } from "react-router-dom";
 
 const AddInvoicePage = () => {
   const [amount, setAmount] = useState("");
   const [status, setStatus] = useState("");
+  const params = useParams();
+    
+  const client_id = +params.client_id;
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      await addinvoiceToApi({ amount, status });
+      await addinvoiceToApi({ client_id,amount, status });
       setShowConfirmation(true);
     } catch (error) {
       console.error("Error adding invoice:", error);
