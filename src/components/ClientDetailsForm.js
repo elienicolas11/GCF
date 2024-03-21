@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const ClientDetailsForm = ({ task }) => {
+const ClientDetails = ({ task }) => {
     return (
         <div>
             {task ? (
@@ -18,4 +18,4 @@ const ClientDetailsForm = ({ task }) => {
     );
 }
 
-export default ClientDetailsForm;
+export default ClientDetails;
