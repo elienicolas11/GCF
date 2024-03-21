@@ -3,21 +3,21 @@
 import React, { useState } from "react";
 import { addinvoiceToApi } from "../api/http";
 import AddInvoiceForm from "../components/AddInvoiceForm";
-import { Link, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const AddInvoicePage = () => {
   const [amount, setAmount] = useState("");
   const [status, setStatus] = useState("");
   const params = useParams();
-    
-  const client_id = +params.client_id;
-  const [showConfirmation, setShowConfirmation] = useState(false);
+  const navigate = useNavigate();
+  
+  const client_id = +params.id;
 
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      await addinvoiceToApi({ client_id,amount, status });
-      setShowConfirmation(true);
+      await addinvoiceToApi({ client_id, amount, status });
+      navigate(-1);
     } catch (error) {
       console.error("Error adding invoice:", error);
     }
@@ -34,19 +34,12 @@ const AddInvoicePage = () => {
 
   return (
     <div>
-      {showConfirmation ? (
-        <div>
-          <p>Invoice added successfully!</p>
-          <Link to="/">Back to clients</Link>
-        </div>
-      ) : (
         <AddInvoiceForm
           amount={amount}
           status={status}
           onChange={handleChange}
           onSubmit={handleSubmit}
         />
-      )}
     </div>
   );
 };

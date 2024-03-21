@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const AddInvoiceForm = ({ amount, status, onChange, onSubmit }) => {
@@ -17,16 +16,16 @@ const AddInvoiceForm = ({ amount, status, onChange, onSubmit }) => {
             </div>
             <div>
                 <label>Statut:</label>
-                <select name="status" value={status} onChange={onChange}>
-                    <option value="sent">Envoyée</option>
-                    <option value="paid">Payée</option>
+                <select name="status" value={status} onChange={onChange} required>
+                    <option value="">Sélectionner un statut</option>
+                    <option value="envoyer">Envoyée</option>
+                    <option value="payer">Payée</option>
                 </select>
             </div>
             <button type="submit">Ajouter la facture</button>
         </form>
     </div>
-);
+  );
 };
 
 export default AddInvoiceForm;
-

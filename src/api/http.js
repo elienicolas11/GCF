@@ -54,6 +54,8 @@ export const addinvoiceToApi = (invoice) => {
         headers: {
             Authorization: "Bearer " + SUPABASE_API_KEY,
             apiKey: SUPABASE_API_KEY,
+            "Content-Type": "application/json",
+            Prefer: "return=representation",
         },
         body: JSON.stringify(invoice),
     })

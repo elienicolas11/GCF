@@ -8,7 +8,7 @@ import InvoiceList from "../components/InvoicesListForm";
 
 const ClientDetailsPage = () => {
     const [task, setTask] = useState(null);
-    const [Invoices, setInvoices] = useState(null);
+    const [Invoices, setInvoices] = useState("");
     const params = useParams();
     
     const id = +params.id;
@@ -24,13 +24,19 @@ const ClientDetailsPage = () => {
     }, [id])
     
     const generateLink = (clientId) => {
-        return typeof clientId === 'number' && !isNaN(clientId) ? `/:${clientId}/invoices/add` : '/invalid-id';
+        return typeof clientId === 'number' && !isNaN(clientId) ? `/${clientId}/invoices/add` : '/invalid-id';
     }
 
     return (
         <div>
             <ClientDetails task={task} generateLink={generateLink} />
             <InvoiceList invoices={Invoices} />
+            <label>{id}</label>
+            <Link to={generateLink(id)}>
+                    <button >
+                        Add Invoice 
+                    </button>
+            </Link>
         </div>
     );
 

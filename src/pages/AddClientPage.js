@@ -2,19 +2,19 @@
 
 import React, { useState } from "react";
 import AddClientForm from "../components/AddClientForm";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { addClientToApi } from "../api/http";
 
 const AddClientPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [showConfirmation, setShowConfirmation] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
       await addClientToApi({ name, email });
-      setShowConfirmation(true);
+      navigate("/");
     } catch (error) {
       console.error('Error adding client:', error);
     }
@@ -34,21 +34,15 @@ const AddClientPage = () => {
   
   return (
     <div>
-      {showConfirmation ? (
-        <div>
-          <p>Client ajouté avec succès!</p>
-          <Link to="/">Retour aux clients</Link>
-        </div>
-      ) : (
-        <AddClientForm
-          name={name}
-          email={email}
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
-        />
-      )}
+      <AddClientForm
+        name={name}
+        email={email}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 };
 
 export default AddClientPage;
+
