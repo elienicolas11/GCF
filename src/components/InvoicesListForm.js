@@ -8,7 +8,7 @@ const InvoiceList = ({ invoices }) => {
         <ul>
           {invoices.map((invoice) => (
             <li key={invoice.id}>
-              <label>{invoice.amount}$      </label>
+              <label>{invoice.amount}$     </label>
               <label>{invoice.status}</label>
             </li>
           ))}

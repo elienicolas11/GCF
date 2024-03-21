@@ -23,11 +23,14 @@ const ClientDetailsPage = () => {
             .then(apiTask => setInvoices(apiTask));
     }, [id])
     
+    const generateLink = (clientId) => {
+        return typeof clientId === 'number' && !isNaN(clientId) ? `/:${clientId}/invoices/add` : '/invalid-id';
+    }
+
     return (
         <div>
-            <ClientDetails task={task} />
+            <ClientDetails task={task} generateLink={generateLink} />
             <InvoiceList invoices={Invoices} />
-            <Link to="/">Retour aux clients</Link>
         </div>
     );
 

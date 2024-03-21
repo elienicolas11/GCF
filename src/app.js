@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ClientsListPage from "./pages/ClientsListPage";
 import ClientsDetailsPage from "./pages/ClientDetailsPage";
 import AddClientPage from "./pages/AddClientPage";
+import AddInvoicePage from "./pages/AddInvoicePage";
 
 const App = () => {
     return <BrowserRouter>
@@ -23,6 +24,10 @@ const App = () => {
             <Route
                 path="/create"
                 element={<  AddClientPage />}
+            />
+            <Route
+                path="/:id/invoices/add"
+                element={<  AddInvoicePage />}
             />
         </Routes>
     </BrowserRouter>
