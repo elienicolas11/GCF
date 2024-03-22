@@ -8,18 +8,22 @@ const ClientDetails = ({ task, generateLink }) => {
         <div>
             {task ? (
                 <>
-                    <Link to={generateLink(task.id)}>
+                <div>
+                    <h2>{task.name}</h2>
+                    <p>{task.email}</p>
+                </div>
+                <div>
+                     <Link to={generateLink(task.id)}>
                         <button>Créer une facture</button>
                     </Link>
                     <Link to="/">
                         <button>Retour aux clients</button>
                     </Link>
-                    <h2>{task.name}</h2>
-                    <p>{task.email}</p>
-                    
+                </div>
                 </>
             ) : (
                 <p>ID Invalide</p>
+                
             )}
         </div>
     );

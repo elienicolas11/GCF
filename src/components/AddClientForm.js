@@ -4,11 +4,11 @@ import React from "react";
 import { Link } from "react-router-dom"
 const AddClientForm = ({ name, email, handleChange, handleSubmit }) => {
   return (
-    <div>
-      <h2>Ajouter un nouveau client</h2>
+    <div className="add-client-container">
+      <label>Ajouter un nouveau client</label>
       <form onSubmit={handleSubmit}>
-        <label>Nom:</label>
-        <br />
+      <div className="form-group">
+        <label>Nom: </label>
         <input 
             type="text"
             name="fullName"
@@ -16,11 +16,9 @@ const AddClientForm = ({ name, email, handleChange, handleSubmit }) => {
             onChange={handleChange}
             required
         />
-        
-        <br />
-
+      </div>
+      <div className="form-group">
         <label>Email: </label>
-        <br></br>
         <input
             type="email"
             name="email"
@@ -28,12 +26,13 @@ const AddClientForm = ({ name, email, handleChange, handleSubmit }) => {
             onChange={handleChange}
             required
           />
-        <br />
-        <button type="submit">Enregistrer</button>
+        </div>
+        <button type="submit">Enregistrer</button> 
+        <Link to="/">
+          <button>Retour aux clients</button>
+        </Link>
       </form>
-      <Link to="/">
-            <button>Retour aux clients</button>
-      </Link>
+     
     </div>
   );
 };

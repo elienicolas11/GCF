@@ -2,30 +2,33 @@ import React from "react";
 import { Link } from "react-router-dom"
 const AddInvoiceForm = ({ amount, status, onChange, onSubmit }) => {
   return (
-    <div>
-        <h2>Ajouter une nouvelle facture</h2>
+    <div className="add-invoice-form">
+        <label>Ajouter une nouvelle facture</label>
         <form onSubmit={onSubmit}>
-            <div>
-                <label>Montant:</label>
+            <div className="form-group">
+                <label>Montant  </label>
                 <input 
                     type="number" 
                     name="amount" 
                     value={amount} 
                     onChange={onChange}
+                    min="0"
+                    step="1"
                 />
             </div>
-            <div>
-                <label>Statut:</label>
+            <div className="form-group">
+                <label>Status  </label>
                 <select name="status" value={status} onChange={onChange} required>
                     <option value="SENT">Envoyée</option>
                     <option value="PAID">Payée</option>
                 </select>
             </div>
             <button type="submit">Enregistrer la facture</button>
+            <Link to="/">
+                <button>Retour aux clients</button>
+            </Link>
         </form>
-        <Link to="/">
-            <button>Retour aux clients</button>
-        </Link>
+        
     </div>
   );
 };
