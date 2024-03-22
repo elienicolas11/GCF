@@ -35,12 +35,13 @@ const ClientsListPage = () => {
             <div >
                 <label >Client List</label>
                 <Link to="/create">
-                    <button >
-                    Créer un client
-                    </button>
+                    <button >Créer un client</button>
                 </Link>
             </div>
-                    <ClientList tasks={tasks} generateLink={generateLink}   />
+            <div>
+                <ClientList tasks={tasks} generateLink={generateLink}   />  
+            </div>
+            
         </div>
     );
 }

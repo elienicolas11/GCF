@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom"
 const AddInvoiceForm = ({ amount, status, onChange, onSubmit }) => {
   return (
     <div>
@@ -23,6 +23,9 @@ const AddInvoiceForm = ({ amount, status, onChange, onSubmit }) => {
             </div>
             <button type="submit">Enregistrer la facture</button>
         </form>
+        <Link to="/">
+            <button>Retour aux clients</button>
+        </Link>
     </div>
   );
 };

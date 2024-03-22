@@ -1,7 +1,7 @@
 // src/pages/ClientDetailsPage.js
 
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { loadClientFromID, loadInvoicesFromID } from "../api/http";
 import ClientDetails from "../components/ClientDetailsForm";
 import InvoiceList from "../components/InvoicesListForm";
@@ -31,12 +31,6 @@ const ClientDetailsPage = () => {
         <div>
             <ClientDetails task={task} generateLink={generateLink} />
             <InvoiceList invoices={Invoices} />
-            <label>{id}</label>
-            <Link to={generateLink(id)}>
-                    <button >
-                        Add Invoice 
-                    </button>
-            </Link>
         </div>
     );
 
