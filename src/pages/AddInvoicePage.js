@@ -25,6 +25,7 @@ const AddInvoicePage = () => {
 
   const handleChange = (e) => {
     const { target: { name, value } } = e;
+    setStatus("SENT");
     if (name === "amount") {
       setAmount(value);
     } else if (name === "status") {

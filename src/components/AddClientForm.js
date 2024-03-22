@@ -11,7 +11,7 @@ const AddClientForm = ({ name, email, handleChange, handleSubmit }) => {
         <br />
         <input
             type="text"
-            name="name"
+            name="fullName"
             value={name}
             onChange={handleChange}
         />
@@ -27,7 +27,7 @@ const AddClientForm = ({ name, email, handleChange, handleSubmit }) => {
             onChange={handleChange}
           />
         <br />
-        <button type="submit">Ajouter</button>
+        <button type="submit">Enregistrer</button>
       </form>
     </div>
   );

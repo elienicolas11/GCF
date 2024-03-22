@@ -17,12 +17,11 @@ const AddInvoiceForm = ({ amount, status, onChange, onSubmit }) => {
             <div>
                 <label>Statut:</label>
                 <select name="status" value={status} onChange={onChange} required>
-                    <option value="">Sélectionner un statut</option>
-                    <option value="envoyer">Envoyée</option>
-                    <option value="payer">Payée</option>
+                    <option value="SENT">Envoyée</option>
+                    <option value="PAID">Payée</option>
                 </select>
             </div>
-            <button type="submit">Ajouter la facture</button>
+            <button type="submit">Enregistrer la facture</button>
         </form>
     </div>
   );

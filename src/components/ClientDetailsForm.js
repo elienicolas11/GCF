@@ -12,10 +12,10 @@ const ClientDetails = ({ task, generateLink }) => {
                     <p>{task.email}</p>
 
                     <Link to={generateLink(task.id)}>
-                        <button>ADD INVOICE</button>
+                        <button>Créer une facture</button>
                     </Link>
                     <Link to="/">
-                        <button>GO BACK</button>
+                        <button>Retour aux clients</button>
                     </Link>
                         
                     

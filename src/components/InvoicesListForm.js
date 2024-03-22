@@ -5,14 +5,22 @@ const InvoiceList = ({ invoices }) => {
   return (
     <div>
       {invoices && invoices.length > 0 ? (
-        <ul>
-          {invoices.map((invoice) => (
-            <li key={invoice.id}>
-              <label>{invoice.amount}$     </label>
-              <label>{invoice.status}</label>
-            </li>
-          ))}
-        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {invoices.map((invoice) => (
+              <tr key={invoice.id}>
+                <td>{invoice.amount}</td>
+                <td>{invoice.status}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       ) : (
         <p>No invoices found.</p>
       )}
@@ -21,5 +29,6 @@ const InvoiceList = ({ invoices }) => {
 };
 
 export default InvoiceList;
+
 
 
