@@ -36,7 +36,7 @@ const ClientsListPage = () => {
                 <label >Client List</label>
                 <Link to="/create">
                     <button >
-                        Add Client
+                    Créer un client
                     </button>
                 </Link>
             </div>
